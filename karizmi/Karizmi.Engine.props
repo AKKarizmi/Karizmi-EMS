@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <KarizmiRoot>$(MSBuildThisFileDirectory)</KarizmiRoot>
+    <KarizmiDependencies>$(KarizmiRoot)vendor\vcpkg_installed\x64-windows-static\</KarizmiDependencies>
+    <IntDir>$(KarizmiRoot)build\engine\$(MSBuildProjectName)\obj\</IntDir>
+    <OutDir>$(KarizmiRoot)build\engine\$(MSBuildProjectName)\</OutDir>
+    <PostBuildEventUseInBuild>false</PostBuildEventUseInBuild>
+    <PreLinkEventUseInBuild>false</PreLinkEventUseInBuild>
+    <VcpkgEnabled>false</VcpkgEnabled>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <PreprocessorDefinitions>KARIZMI_EXAM;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(KarizmiRoot)include;$(KarizmiDependencies)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <ResourceCompile><PreprocessorDefinitions>KARIZMI_EXAM;%(PreprocessorDefinitions)</PreprocessorDefinitions></ResourceCompile>
+    <Link>
+      <AdditionalDependencies>dbghelp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(KarizmiRoot)build\release;$(KarizmiRoot)vendor\botan-build;$(KarizmiDependencies)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='vncviewer'"><TargetName>KarizmiTeacher</TargetName></PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='winvnc'"><TargetName>KarizmiStudent</TargetName></PropertyGroup>
+  <ItemGroup Condition="'$(MSBuildProjectName)'=='vncviewer'">
+    <ClCompile Include="$(KarizmiRoot)src\teacher_engine.cpp"><PrecompiledHeader>NotUsing</PrecompiledHeader><AdditionalIncludeDirectories>$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories></ClCompile>
+    <ResourceCompile Include="$(KarizmiRoot)branding.rc" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(MSBuildProjectName)'=='winvnc'">
+    <ClCompile Include="$(KarizmiRoot)src\student_engine.cpp"><PrecompiledHeader>NotUsing</PrecompiledHeader><AdditionalIncludeDirectories>$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories></ClCompile>
+    <ClCompile Include="$(KarizmiRoot)src\student_legacy_stubs.cpp"><PrecompiledHeader>NotUsing</PrecompiledHeader><AdditionalIncludeDirectories>$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories></ClCompile>
+    <ClCompile Remove="$(ProjectDir)HideDesktop.cpp" />
+    <ResourceCompile Include="$(KarizmiRoot)branding.rc" />
+  </ItemGroup>
+  <ItemDefinitionGroup Condition="'$(MSBuildProjectName)'=='vncviewer' Or '$(MSBuildProjectName)'=='winvnc'">
+    <Link><AdditionalDependencies>karizmi_app.lib;karizmi_network.lib;karizmi_security.lib;karizmi_core.lib;botan-3.lib;bcrypt.lib;crypt32.lib;iphlpapi.lib;ole32.lib;oleaut32.lib;advapi32.lib;shell32.lib;comctl32.lib;user32.lib;gdi32.lib;shlwapi.lib;zlib.lib;zstd.lib;lzma.lib;jpeg.lib;turbojpeg.lib;libsodium.lib;minizip-ng.lib;bz2.lib;%(AdditionalDependencies)</AdditionalDependencies></Link>
+  </ItemDefinitionGroup>
+</Project>
