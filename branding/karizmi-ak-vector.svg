@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200" role="img" aria-label="Karizmi AK geometric monogram on purple gradient">
+  <defs>
+    <linearGradient id="base" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#42124d"/>
+      <stop offset="0.52" stop-color="#33183b"/>
+      <stop offset="1" stop-color="#242124"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="1" r="1.35">
+      <stop offset="0" stop-color="#451052" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#451052" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="1200" fill="url(#base)"/>
+  <rect width="1200" height="1200" fill="url(#glow)"/>
+  <g fill="#fff" fill-rule="evenodd">
+    <path d="M 852 586 L 812 637 L 893 738 L 974 738 Z"/>
+<path d="M 268 355 L 268 436 L 349 436 L 350 438 L 186 764 L 267 764 L 309 682 L 554 682 L 513 601 L 349 600 L 391 518 L 411 559 L 492 558 L 390 355 Z"/>
+<path d="M 974 329 L 893 329 L 647 636 L 646 329 L 565 329 L 565 738 L 646 738 Z"/>
+  </g>
+</svg>
