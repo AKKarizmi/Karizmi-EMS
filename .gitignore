@@ -193,6 +193,10 @@ ui_*.h
 *.jsc
 Makefile*
 *build-*
+!/BUILD-KARIZMI.md
+!/Build-Karizmi.ps1
+!/karizmi/tools/Build-Apps.ps1
+!/karizmi/tools/Build-Core.ps1
 *.qm
 *.prl
 
@@ -223,3 +227,17 @@ ultravnc_service/src/.opencppcov/
 vncviewer/vcpkg_installed/
 winvnc/winvnc/vcpkg_installed/
 rdr/vcpkg_installed/
+
+# Karizmi local dependencies, packages, and sensitive diagnostics
+/karizmi/vendor/
+/karizmi/out/
+/karizmi/out-*/
+/karizmi/release-staging/
+__pycache__/
+*.pyc
+*.dmp
+*.mdmp
+*.wer
+.env
+.env.*
+!.env.example

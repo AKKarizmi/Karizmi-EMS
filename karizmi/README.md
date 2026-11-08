@@ -1,10 +1,17 @@
 # Karizmi Teacher and Student
 
+## Current validation context
+
+An earlier version of Karizmi EMS was successfully tested by the developer using three physical laptops connected over a local area network. This is a developer-reported functional testing milestone and does not constitute comprehensive validation of the latest build.
+
+Latest physical discovery/network-recovery repairs remain unconfirmed; multi-device acceptance and independent security review are outstanding. Historical results below retain their original scope. Current behavior is consolidated in [TECHNICAL-SPECIFICATION.md](TECHNICAL-SPECIFICATION.md). A subsequent preparation rebuild of both applications and all four automated suites passed using existing dependencies; see [preparation audit](PORTFOLIO-AUDIT.md). The rebuilt candidate has no new physical-device acceptance and does not replace the historical baseline by implication.
+
+
 The current consolidated implementation specification is [TECHNICAL-SPECIFICATION.md](TECHNICAL-SPECIFICATION.md), dated 2026-11-08. It identifies the latest protocol-3 package baseline, superseded historical notes, and outstanding physical discovery/recovery failures.
 
 Karizmi is an offline Windows LAN screen sharing application built from the UltraVNC capture and viewer engines. The Student asks for consent before making a temporary pairing code available. Both users compare and confirm a phrase before a screen session starts. Teacher starts every connection and reconnection in view-only mode. Student input remains local and can only be controlled after Teacher requests control and Student acknowledges that control is available.
 
-This checkout includes the implementation and reproducible build scripts. It is a development preview, not a security-reviewed release. The code has not been audited by an independent reviewer or tested between two Windows computers. Do not use it for a live exam until those checks and the outstanding firewall and input-control work below are complete.
+This checkout includes the implementation and reproducible build scripts. It is a development preview, not a security-reviewed release. The code has not been audited by an independent reviewer; latest physical multi-computer acceptance is incomplete. Do not use it for a live exam until those checks and the outstanding firewall and input-control work below are complete.
 
 ## Build
 
@@ -39,7 +46,7 @@ Shared Teacher/Student font and DPI layout repairs, screenshots, and validation 
 | Teacher x64 executable build | Passed with VS 2026/v145 |
 | Student x64 executable build | Passed with VS 2026/v145 |
 | Windows Firewall behavior and UAC cleanup on a separate Windows installation | Not tested |
-| Two-computer pairing, screen capture, input control, recovery, or packet capture | Not tested |
+| Latest physical pairing, screen capture, input control, recovery, and packet capture acceptance | Outstanding; earlier three-laptop milestone is separate |
 | Independent security review | Not performed |
 
 ## Known release gaps
@@ -55,3 +62,5 @@ Shared Teacher/Student font and DPI layout repairs, screenshots, and validation 
 See `tests/` for the automated test sources and the repository's `LICENSE` for UltraVNC attribution and GPL terms. Botan's license is shipped separately in each package.
 
 See [RECOVERY-VALIDATION.md](RECOVERY-VALIDATION.md) for viewer-close behavior, same-sign-in approval recovery, crash evidence, and current test limits. Exit preserves approval during the current Windows sign-in; Disconnect and End exam revoke it.
+
+Repository navigation: [root overview](../README.md), [build guide](../BUILD-KARIZMI.md), [release plan](RELEASE-PLAN.md), [portfolio copy](PORTFOLIO.md), [third-party review](THIRD-PARTY-NOTICES.md), [preparation audit](PORTFOLIO-AUDIT.md).

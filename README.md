@@ -1,144 +1,99 @@
-<!--
-// This file is part of UltraVNC
-// https://github.com/ultravnc/UltraVNC
-// https://uvnc.com/
-//
-// SPDX-License-Identifier: GPL-3.0-or-later
-//
-// SPDX-FileCopyrightText: Copyright (C) 2002-2025 UltraVNC Team Members. All Rights Reserved.
-//
--->
+# Karizmi Exam Monitoring System
 
+**Karizmi EMS ? Monitor Smarter. Examine Better. Stay Offline.**
 
-<p align="center">
-  <h2 align="center">UltraVNC</h2>
-  <p align="center">Remote Access Tools</p>
-</p>
-<p align="center">
-  <a href="https://uvnc.com/">
-    <img src="https://uvnc.com/images/Viewer1230.png" alt="UltraVNC Viewer" width="250">
-  </a>
-  <br><br>
-  <a href="https://github.com/orgs/ultravnc/followers" target="_blank" rel="noopener"><img src="https://img.shields.io/github/followers/ultravnc?color=%23066da5&label=followers&logo=github&logoColor=%23fff&style=flat-square" alt="UltraVNC GitHub Followers"></a>
-  <a href="https://github.com/ultravnc/UltraVNC/stargazers" target="_blank" rel="noopener"><img src="https://img.shields.io/github/stars/ultravnc/UltraVNC?color=%23066da5&label=stars&logo=github&logoColor=%23fff&style=flat-square" alt="UltraVNC GitHub Stars"></a>
-  <a href="https://github.com/ultravnc/UltraVNC/watchers" target="_blank" rel="noopener"><img src="https://img.shields.io/github/watchers/ultravnc/UltraVNC?color=%23066da5&label=watchers&logo=github&logoColor=%23fff&style=flat-square" alt="UltraVNC GitHub Watchers"></a>
-  <a href="https://github.com/ultravnc/UltraVNC/network" target="_blank" rel="noopener"><img src="https://img.shields.io/github/forks/ultravnc/UltraVNC?color=%23066da5&label=forks&logo=github&logoColor=%23fff&style=flat-square" alt="UltraVNC GitHub Forks"></a>
-  <a href="https://github.com/ultravnc/UltraVNC/graphs/contributors" target="_blank" rel="noopener"><img src="https://img.shields.io/github/contributors/ultravnc/UltraVNC?color=%23066da5&label=contributors&logo=github&logoColor=%23fff&style=flat-square" alt="UltraVNC GitHub Contributors"></a>
-  <a href="https://github.com/ultravnc/UltraVNC/tags" target="_blank" rel="noopener"><img src="https://img.shields.io/github/v/tag/ultravnc/UltraVNC?color=%23066da5&label=tag&logo=github&logoColor=%23fff&style=flat-square" alt="UltraVNC GitHub Tags"></a>
-  <a href="https://github.com/ultravnc/UltraVNC/blob/main/LICENSE" target="_blank" rel="noopener"><img src="https://img.shields.io/github/license/ultravnc/UltraVNC?color=%23066da5&label=license&logo=github&logoColor=%23fff&style=flat-square" alt="UltraVNC GitHub License"></a>
-  <a href="https://github.com/ultravnc/UltraVNC" target="_blank" rel="noopener"><img src="https://img.shields.io/github/last-commit/ultravnc/UltraVNC/main?color=%23066da5&label=last%20commit&logo=github&logoColor=%23fff&style=flat-square" alt="UltraVNC GitHub Last Commit"></a>
-</p>
+**Development Preview ? Windows 10/11 x64 ? C++20 ? Win32 ? UltraVNC ? TCP/IP ? UDP ? Botan ? TLS 1.3**
 
-<a href="https://uvnc.com/">UltraVNC</a> is a powerful, easy to use and free - remote pc access softwares - that can display the screen of another computer (via internet or network) on your own screen. The program allows you to use your mouse and keyboard to control the other PC remotely. It means that you can work on a remote computer, as if you were sitting in front of it, right from your current location.
+## Overview
 
-VNC, the Remote Frame Buffer protocol (RFB) allows a desktop to be viewed and controlled remotely over the Internet. A VNC Server must be run on the computer sharing the desktop, a VNC client must be run on the computer that will access the shared desktop.
+Karizmi EMS helps teachers observe student computers during practical examinations on an IPv4 Ethernet or Wi-Fi LAN. Karizmi Teacher provides a centralized classroom dashboard; Karizmi Student shares its desktop after authenticated pairing. Runtime operation requires no internet, cloud account, or external pairing server. Building dependencies initially requires internet access.
 
----
+This native Windows project extends and customizes the open-source UltraVNC capture and viewer engines. It is a development preview, with unresolved physical-network validation and no independent security review. It is not production-certified.
 
-### Supported operating systems
-- 🔗 Windows 7, 8, 8.1, 10, 11, Server 2008 R2, Server 2012, Server 2012 R2, Server 2016, Server 2019, Server 2022, Server 2025: current version: https://uvnc.com/downloads/ultravnc.html
-- 🔗 Windows XP, Windows Server 2003, Vista, Server 2003 R2, Server 2008: latest version: https://uvnc.com/downloads/ultravnc/129-download-ultravnc-1231.html
-- 🔗 Windows 2000: latest version: https://uvnc.eu/download/1215/Ultravnc_w2k_1215.zip
-- 🔗 Windows 95**, 98**, Me**, NT4**: latest version: https://uvnc.eu/download/102/
+## Key features and evidence
 
-Its embedded JavaViewer allows you to connect (and make File transfers) from a simple Web Browser on any system supporting Java (Linux, Mac OS, ...) to an UltraVNC Server.
-PcHelpWare and uvnc2me require XP or later.
+| Implemented capability | Evidence and limits |
+| --- | --- |
+| Separate native Teacher and Student applications | Win32 interfaces and engine integration in source |
+| Dashboard with up to ten reserved student sessions | Ten encrypted peers tested locally; ten simultaneous physical desktop sessions remain unvalidated |
+| Remote screen viewing and optional keyboard/mouse control | Starts View Only; Student enforces control permission; one controlled Student at a time |
+| LAN discovery and authenticated pairing | IPv4 UDP discovery, eight-digit SRP pairing, mutual phrase confirmation |
+| TLS 1.3 encrypted transport | Botan external-PSK TLS with X25519 and AES-128/GCM; automated security/socket tests recorded |
+| Connection and session recovery | Same-sign-in protected approvals and retry logic implemented; latest physical discovery/outage repair remains unconfirmed |
 
-<p align="center">
-  <a href="https://en.wikipedia.org/wiki/C_(programming_language)" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white" alt="C"></a>
-  <a href="https://en.wikipedia.org/wiki/C%2B%2B" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white" alt="C++"></a>
-  <a href="https://www.java.com/" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java"></a>
-</p>
+An earlier version of Karizmi EMS was successfully tested by the developer using three physical laptops connected over a local area network. This is a developer-reported functional testing milestone and does not constitute comprehensive validation of the latest build.
 
-<p align="center">UltraVNC Viewer works with all VNC Servers<br><br>
-  <a href="https://www.microsoft.com/windows/" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white" alt="Microsoft Windows"></a>
-  <a href="https://www.linux.org/" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux"></a>
-  <a href="https://www.apple.com/macos/" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/mac%20os-000000?style=for-the-badge&logo=macos&logoColor=F0F0F0" alt="Apple MacOS"></a>
-</p>
+## System architecture
 
-<p align="center">UltraVNC Server works on Microsoft Windows OS<br><br>
-  <a href="https://www.microsoft.com/windows/" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white" alt="Microsoft Windows"></a>
-</p>
+```mermaid
+flowchart LR
+    T[Karizmi Teacher: dashboard and viewers] <-->|IPv4 LAN| L[Ethernet or Wi-Fi]
+    L <-->|UDP 45900 discovery; TCP 45901 pairing/recovery; TCP 45902 encrypted screen/control| S1[Karizmi Student A]
+    L <-->|Same protocol; independent authenticated session| S2[Karizmi Student B]
+    L <-->|Up to 10 reserved Students| SN[Additional Students]
+```
 
----
+Discovery labels are unverified hints. Pairing derives TLS credentials using SRP-6a and HKDF; both users confirm a phrase before monitoring. Discovery and bootstrap metadata are not all encrypted. See the [technical specification](karizmi/TECHNICAL-SPECIFICATION.md) for boundaries and lifecycle details.
 
-### Compatibility
-All VNC flavors follow the RFB protocol. This common start point means that most of the VNC flavours available today "usually" talk nicely together, allowing for easy cross platform desktop sharing to occur.
-PcHelpWare and uvnc2me are not RFB compatible.
+## Technical stack
 
----
+Custom components use C++20, Win32 APIs, Winsock, Windows Firewall COM APIs, and DPAPI. UltraVNC supplies the customized legacy screen-capture/viewer engines. Botan 3.13.0 is source-built and checksum-pinned. The root vcpkg manifest pins a baseline for zlib, zstd, libjpeg-turbo, liblzma, libsodium, and minizip-ng, with transitive dependencies including bzip2. Builds use MSVC, Windows SDK, CMake 3.24+, Ninja, Python 3.12+, and MSBuild. Full details: [build guide](BUILD-KARIZMI.md).
 
-### Remote PC Access Software
-If you provide computer support, you can quickly access your customer's computers from anywhere in the world and resolve helpdesk issues remotely! With addons like Single Click (SC) your customers don't even have to pre-install software or execute complex procedures to get remote helpdesk support.
+## Installation and usage
 
----
+There is no official preview release established by this preparation. Existing repository archives are historical candidates, not approved release assets. Build both applications from source or use a future maintainer-published Development Preview after checking its notes and checksums. See the [release plan](karizmi/RELEASE-PLAN.md).
 
-### Who Should Use UltraVNC
-Anyone who needs to support local or remote Windows users will find UltraVNC Products are must-have tools UltraVNC Products have been specifically designed to answer the needs of:
-- 📌 Help Desk (Internal/External)
-- 📌 IT departments
-- 📌 Remote Computer Support companies
-- 📌 Remote Computer Access
-- 📌 Remote demonstration
-- 📌 eLearning, classroom control
-- 📌 Individuals that want to help their relatives and friends, or access their home PC from work or cybercafes
+1. Use Windows 10/11 x64 computers on a LAN that permits peer traffic. Extract the entire Teacher or Student package; keep Student with `vnchooks.dll`.
+2. Run `KarizmiStudent.exe`, accept its monitoring notice, open it from the tray, and choose **Set up exam connection**. Run `KarizmiTeacher.exe` and complete the same setup.
+3. Approve the setup UAC prompt for temporary executable-scoped Windows Firewall rules. Student discovery uses UDP 45900, pairing/recovery TCP 45901, and screen/control TCP 45902. Do not disable the firewall. Managed policy, blocked local rules, or Wi-Fi client isolation may prevent access.
+4. Select the discovered Student in Teacher, enter the Student's eight-digit code, and choose **Pair selected**. Compare and confirm the phrase on both computers.
+5. Double-click a tile to view the screen. Viewing and recovery start View Only. Request control separately; Student must acknowledge permission. **Disconnect** revokes a pairing; **End exam** revokes all pairings. Closing the main window hides it to the tray; use **Exit** to quit.
 
----
+The optional Student service requires separate installation; portable launch does not install it. See [service instructions](karizmi/SERVICE.md) and [classroom controls](karizmi/CLASSROOM.md).
 
-### About Us
-We are a small team of highly motivated and cool people :-)
-Our goal is to make the more powerful, user-friendly and no-brainer free Remote Control software available.
+## Building from source
 
-<a href="https://uvnc.com/">UltraVNC</a> is Free and distributed under the terms of the <a href="https://github.com/ultravnc/UltraVNC/blob/main/LICENSE">GNU General Public License</a>.
+From the repository root on Windows with the prerequisites in the [build guide](BUILD-KARIZMI.md):
 
-The UltraVNC project is born in 2002, the first UltraVNC version has been released 2002-12-05, following the merger of two projects:
-- Vdacc-VNC started by Rudi De Vos in 1999
-- eSVNC started by Sam in 2002
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File karizmi/tools/Build-Apps.ps1
+```
 
-The UltraVNC team is made up of two people:
-- Rudi De Vos
-- Ludovic Bocquet
+Default package directories: `karizmi/out/Teacher` and `karizmi/out/Student`. The full build runs shared-component tests before packaging. These are rebuild instructions; byte-for-byte reproducibility is not established. See the [preparation audit](karizmi/PORTFOLIO-AUDIT.md) for checks actually run during this work.
 
-Contact:
-- 📫 uvnc@skynet.be
-- 💬 For technical questions, use the <a href="https://forum.uvnc.com/">FORUM</a> or <a href="https://github.com/ultravnc/UltraVNC/issues">GitHub</a> first.
+## Testing and validation
 
----
+Historical development records report four automated suites (core, security, network, UI), synthetic DPI checks, ten local encrypted peers, and earlier same-PC paired GUI acceptance. These scopes differ from physical classroom testing and do not certify every latest binary. The developer-reported three-laptop milestone above concerns an earlier version. Latest physical discovery/recovery failures remain open until retested.
 
-### Our links
-- 🚩 [Website](https://uvnc.com/)
-- 🚩 [Forum](https://forum.uvnc.com/)
-- 🚩 [GitHub](https://github.com/ultravnc)
-- 🚩 [GitHub Issues](https://github.com/ultravnc/UltraVNC/issues)
-- 🚩 [GitHub Pull requests](https://github.com/ultravnc/UltraVNC/pulls)
-- 🚩 [Mastodon/Fediverse](https://mastodon.social/@ultravnc)
-- 🚩 [Bluesky/AT Protocol](https://bsky.app/profile/ultravnc.bsky.social)
-- 🚩 [Facebook](https://www.facebook.com/ultravnc1)
-- 🚩 [X/Twitter](https://x.com/ultravnc1)
-- 🚩 [Reddit](https://www.reddit.com/r/ultravnc)
-- 🚩 [OpenHub](https://openhub.net/p/ultravnc)
+See [recovery evidence](karizmi/RECOVERY-VALIDATION.md), [UI evidence](karizmi/UI-VALIDATION.md), and the [current specification](karizmi/TECHNICAL-SPECIFICATION.md). Some historical logs and screenshots referenced there exist only in ignored local build directories.
 
----
+## Project structure
 
-### Compile and build in Visual Studio
-- 🛠️ Visual Studio: 2017 | 2019 | 2022
-- 🛠️ Netwide Assembler (NASM): https://nasm.us/
-- ⚙️ vncviewer.sln to build UltraVNC Viewer
-- ⚙️ winvnc.sln to build UltraVNC Server
+| Path | Purpose |
+| --- | --- |
+| [karizmi](karizmi/README.md) | Custom application, protocol, security, classroom, service, tests, and documentation |
+| `karizmi/src`, `karizmi/include` | Custom modules and Teacher/Student engine adapters |
+| `karizmi/tools`, `karizmi/tests` | Build/support tools and automated tests |
+| [Karizmi.Engine.props](karizmi/Karizmi.Engine.props) | Isolated MSBuild settings and integration objects |
+| `vncviewer`, `winvnc` | Upstream-derived viewer/capture source with guarded Karizmi integration |
+| `common`, `rfb`, `rdr`, `3rdparty`, other root modules | Retained upstream infrastructure and dependencies |
+| `karizmi/out-*` | Historical package artifacts; preserved, not an official release channel |
 
----
+## Acknowledgments and licensing
 
-<div align="center">
-  Copyright ©️ 2002-2025 <a href="https://uvnc.com/">UltraVNC</a> Team Members. All Rights Reserved.
-</div>
+Thanks to the [UltraVNC developers](https://github.com/ultravnc/UltraVNC) for the original engines. The root [LICENSE](LICENSE) contains GNU GPL version 3. Existing source copyright and license notices remain authoritative and must be retained. Botan uses BSD-2-Clause. See [third-party notices and review gaps](karizmi/THIRD-PARTY-NOTICES.md); a root license copy alone does not establish distribution compliance or complete corresponding source for old binaries.
 
----
+## Development roadmap
 
-<p align="center">
-  <a href="https://github.com/ultravnc" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white" alt="UltraVNC GitHub"></a>
-  <a href="https://mastodon.social/@ultravnc" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/mastodon-black?style=for-the-badge&logo=mastodon" alt="UltraVNC Mastodon"></a>
-  <a href="https://bsky.app/profile/ultravnc.bsky.social" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/Bluesky-0285FF?style=for-the-badge&logo=Bluesky&logoColor=white" alt="UltraVNC Bluesky"></a>
-  <a href="https://www.facebook.com/Ultravnc1" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/Facebook-%231877F2.svg?style=for-the-badge&logo=Facebook&logoColor=white" alt="UltraVNC Facebook"></a>
-  <a href="https://x.com/ultravnc1" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/X-%23000000.svg?style=for-the-badge&logo=X&logoColor=white" alt="UltraVNC X/Twitter"></a>
-  <a href="https://www.reddit.com/r/ultravnc" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/Reddit-000?style=for-the-badge&logo=reddit&logoColor=FF4500" alt="UltraVNC Reddit"></a>
-</p>
+- Reproduce and close physical discovery and unplug/replug recovery failures on latest packages.
+- Validate two independent live Students, cross-target input isolation, adapter/IP changes, and ten-device classroom capacity.
+- Expand rotation/teardown failure injection, sign-out/restart/sleep, service, firewall, and Explorer-restart acceptance.
+- Obtain independent security review of pairing, TLS composition, recovery, and privileged firewall helper.
+- Consider configurable ports, transactional listener changes, stale-rule ownership cleanup, adapter notifications, and concurrent Student bootstrap processing.
+- Complete dependency/source provenance and release acceptance gates before publishing a preview.
+
+## Screenshots and demonstrations
+
+No tracked application screenshots were found during preparation; the branding image is not an application capture. Historical local screenshot references are preserved as evidence references, not embedded as published images. Future demonstrations should capture the Teacher dashboard, discovery list, pairing confirmation, multiple live Students, remote control, and outage recovery using test identities and no visible secrets. See [portfolio copy and capture checklist](karizmi/PORTFOLIO.md).
+
+Contributors: follow the [contribution guide](CONTRIBUTING.md) and distinguish source inspection, automated results, and physical acceptance in reports.

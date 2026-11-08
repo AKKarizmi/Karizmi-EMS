@@ -1,4 +1,4 @@
-# Classroom preview — protocol 2
+# Classroom preview — protocol 3
 
 Teacher discovers Karizmi Students on the local IPv4 LAN, refreshes discovery every five seconds, and keeps up to ten reserved student sessions. Student starts in the tray after the initial monitoring notice. Approvals survive application restarts during the current Windows sign-in session; see RECOVERY-VALIDATION.md. Install both newly built packages together; protocol 1/2 builds are incompatible.
 
@@ -7,7 +7,7 @@ Teacher discovers Karizmi Students on the local IPv4 LAN, refreshes discovery ev
 1. Start Student and accept its notice. Open **Karizmi Student** from its tray icon to see the eight-digit code and run **Set up exam connection**.
 2. Start Teacher and run **Set up exam connection**. Eligible devices appear in the discovery list. Computer names in this list are **Unverified**; they are hints, not authenticated identities.
 3. Select a device, enter its code, and choose **Pair selected**. Compare the authenticated phrase on both computers and confirm on each.
-4. A tile represents each reserved Student. Double-click to open its screen. Right-click for **Open screen**, **Open full screen**, session details/confirmation, control, Reconnect now, or Disconnect. Session details also provide the visible view-only/control toggle. Ctrl+Shift+F12 applies to the selected tile; select the intended student before using it. The retained viewer offers Ctrl+Alt+F12 to toggle full-screen mode.
+4. A tile represents each reserved Student. Double-click to open its screen. Right-click for **Open screen**, **Open full screen**, session details/confirmation, control, Reconnect now, or Disconnect. Session details also provide the visible view-only/control toggle. Ctrl+Shift+F12 targets the focused viewer; grid/session-details focus uses that context. See TECHNICAL-SPECIFICATION.md for current routing rules. The retained viewer offers Ctrl+Alt+F12 to toggle full-screen mode.
 5. **End exam** disconnects all students. Closing Teacher hides it in the tray; **Exit** ends the application and its sessions.
 
 Student's tray shows Ready, Monitored — View only, Monitored — Control on, or Interrupted. Disconnect and Exit remain available there. New pairing displays confirmation; ordinary reconnects are quiet. An Explorer restart notification causes tray re-registration; registration failure displays the main window. The tray icon may be in Windows' notification-area overflow.

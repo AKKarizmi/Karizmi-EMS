@@ -1,0 +1,80 @@
+[
+  {
+    "file": "karizmi/out-recovery-status/out-recovery-status.zip",
+    "bytes": 4259495,
+    "sha256": "b7d0cee867e2def47274f20396d181c472a32d71fd975ce64fde1a4c3557c5ef",
+    "entries": [
+      "Teacher/",
+      "Teacher/Botan-LICENSE.txt",
+      "Teacher/CLASSROOM.md",
+      "Teacher/KarizmiTeacher.exe",
+      "Teacher/LICENSE",
+      "Teacher/options.vnc",
+      "Teacher/README.md",
+      "Teacher/RECOVERY-VALIDATION.md",
+      "Teacher/SERVICE.md",
+      "Teacher/UI-VALIDATION.md",
+      "Student/",
+      "Student/Botan-LICENSE.txt",
+      "Student/CLASSROOM.md",
+      "Student/Install-StudentService.ps1",
+      "Student/KarizmiStudent.exe",
+      "Student/KarizmiStudentService.exe",
+      "Student/LICENSE",
+      "Student/README.md",
+      "Student/RECOVERY-VALIDATION.md",
+      "Student/SERVICE.md",
+      "Student/UI-VALIDATION.md",
+      "Student/Uninstall-StudentService.ps1",
+      "Student/vnchooks.dll"
+    ],
+    "binary_hashes": {
+      "Teacher/KarizmiTeacher.exe": "f4e5da32999e5ce8fbe7d730b0cb3f92b66b5fe7c04702c981c22ccfdf197357",
+      "Student/KarizmiStudent.exe": "0f9815111ae95c539ec6749e63878a57c105d7bb6f406c088564d258c29c8800",
+      "Student/KarizmiStudentService.exe": "42497e514d8b01529a3c2e082a9dcfac86043c49cccd561c8a9dab4d821635d1",
+      "Student/vnchooks.dll": "6914faa300ad810abef7aeb97101c7b059803d7dbff4b5bfbc2aa2f25b14e47d"
+    }
+  },
+  {
+    "file": "karizmi/out-recovery-status/Student.rar",
+    "bytes": 1806867,
+    "sha256": "d2bc5d773edc24df5b1a78330018561031f08bb982d297cc289690a8d693d1ec"
+  },
+  {
+    "file": "karizmi/out-recovery-status/Student.zip",
+    "bytes": 2200583,
+    "sha256": "d0072fe660c6b0cacac6e01da28f920cbf7bb889cd2eb7b628bbd6c845b88e12",
+    "entries": [
+      "Student/",
+      "Student/Botan-LICENSE.txt",
+      "Student/CLASSROOM.md",
+      "Student/Install-StudentService.ps1",
+      "Student/KarizmiStudent.exe",
+      "Student/KarizmiStudentService.exe",
+      "Student/LICENSE",
+      "Student/README.md",
+      "Student/RECOVERY-VALIDATION.md",
+      "Student/SERVICE.md",
+      "Student/UI-VALIDATION.md",
+      "Student/Uninstall-StudentService.ps1",
+      "Student/vnchooks.dll"
+    ],
+    "binary_hashes": {
+      "Student/KarizmiStudent.exe": "0f9815111ae95c539ec6749e63878a57c105d7bb6f406c088564d258c29c8800",
+      "Student/KarizmiStudentService.exe": "42497e514d8b01529a3c2e082a9dcfac86043c49cccd561c8a9dab4d821635d1",
+      "Student/vnchooks.dll": "6914faa300ad810abef7aeb97101c7b059803d7dbff4b5bfbc2aa2f25b14e47d"
+    }
+  },
+  {
+    "file": "karizmi/out-recovery-status/Teacher/KarizmiTeacher.exe",
+    "sha256": "f4e5da32999e5ce8fbe7d730b0cb3f92b66b5fe7c04702c981c22ccfdf197357"
+  },
+  {
+    "file": "karizmi/out-recovery-status/Student/KarizmiStudent.exe",
+    "sha256": "0f9815111ae95c539ec6749e63878a57c105d7bb6f406c088564d258c29c8800"
+  },
+  {
+    "file": "karizmi/out-recovery-status/Student/KarizmiStudentService.exe",
+    "sha256": "42497e514d8b01529a3c2e082a9dcfac86043c49cccd561c8a9dab4d821635d1"
+  }
+]

@@ -1,5 +1,12 @@
 # Shared UI repair — 2026-11-05
 
+## Current validation context
+
+An earlier version of Karizmi EMS was successfully tested by the developer using three physical laptops connected over a local area network. This is a developer-reported functional testing milestone and does not constitute comprehensive validation of the latest build.
+
+Latest physical discovery/network-recovery repairs remain unconfirmed; multi-device acceptance and independent security review are outstanding. Historical results below retain their original scope. Current behavior is consolidated in [TECHNICAL-SPECIFICATION.md](TECHNICAL-SPECIFICATION.md). A subsequent preparation rebuild of both applications and all four automated suites passed using existing dependencies; see [preparation audit](PORTFOLIO-AUDIT.md). The rebuilt candidate has no new physical-device acceptance and does not replace the historical baseline by implication.
+
+
 The shared Win32 interface in `src/app.cpp` scaled fonts and child controls without consistently sizing the main window. Previously packaged executables also linked an older shared UI library because `Build-Apps.ps1 -SkipCore` skipped its rebuild. At the development display's 240 DPI (250%), controls extended beyond the old 620-by-610-pixel window.
 
 Both roles now use explicit Segoe UI LOGFONT sizes, a DPI-scaled client area, shared responsive layout, minimum window dimensions, WM_SIZE and WM_DPICHANGED handling, readable colors, and role-specific visible controls. Confirmation adds room for its phrase and buttons. The build script now rebuilds shared components even when dependency bootstrapping is skipped.

@@ -1,5 +1,12 @@
 # Karizmi Teacher and Student — technical specification
 
+## Current validation context
+
+An earlier version of Karizmi EMS was successfully tested by the developer using three physical laptops connected over a local area network. This is a developer-reported functional testing milestone and does not constitute comprehensive validation of the latest build.
+
+Latest physical discovery/network-recovery repairs remain unconfirmed; multi-device acceptance and independent security review are outstanding. Historical results below retain their original scope. Current behavior is consolidated in [TECHNICAL-SPECIFICATION.md](TECHNICAL-SPECIFICATION.md). A subsequent preparation rebuild of both applications and all four automated suites passed using existing dependencies; see [preparation audit](PORTFOLIO-AUDIT.md). The rebuilt candidate has no new physical-device acceptance and does not replace the historical baseline by implication.
+
+
 Document date: 2026-11-08, Asia/Kabul. Baseline: latest built `out-recovery-status` packages and current source, protocol **3**. Status: **development preview**. This document describes implemented behavior, intended guarantees, and known gaps separately. It is not a security certification or a statement that physical classroom acceptance has passed.
 
 ## 1. Product scope
